@@ -1,31 +1,28 @@
 package com.javarush.domain;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Fetch;
 
 import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
-@Table(schema = "world",name = "country")
+@Table(schema = "world", name = "country")
 public class Country {
     @Id
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name = "code")
     private String code;
 
     @Column(name = "code_2")
-    private String code2;
+    private String alternativeCode;
 
-    @Column(name = "name")
     private String name;
 
     @Column(name = "continent")
     @Enumerated(EnumType.ORDINAL)
     private Continent continent;
 
-    @Column(name = "region")
     private String region;
 
     @Column(name = "surface_area")
@@ -34,7 +31,6 @@ public class Country {
     @Column(name = "indep_year")
     private Short independenceYear;
 
-    @Column(name = "population")
     private Integer population;
 
     @Column(name = "life_expectancy")
@@ -79,12 +75,12 @@ public class Country {
         this.code = code;
     }
 
-    public String getCode2() {
-        return code2;
+    public String getAlternativeCode() {
+        return alternativeCode;
     }
 
-    public void setCode2(String code2) {
-        this.code2 = code2;
+    public void setAlternativeCode(String alternativeCode) {
+        this.alternativeCode = alternativeCode;
     }
 
     public String getName() {
